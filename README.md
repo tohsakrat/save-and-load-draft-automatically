@@ -31,11 +31,3 @@ Enable the extension, a new tab will appear on the left hand side. This separate
 Make sure you configure the upload permission on the permissions page as well.
 
 
-
-## Links
-
-
-- [Source code on GitHub]([https://github.com/FriendsOfFlarum/upload](https://github.com/tohsakrat/save-and-load-draft-automatically/))
-- [Report an issue]([https://github.com/FriendsOfFlarum/upload/issues](https://github.com/tohsakrat/save-and-load-draft-automatically/))
-- [Download via Packagist](https://packagist.org/packages/tohsakarat/upload)
-
