@@ -1,0 +1,48 @@
+{
+    "name": "tohsakarat/save-and-load-draft-automatically",
+    "description": "Automatically save drafts in browser storage. And ask user to save drafts when they exit composer",
+    "keywords": [
+        "upload",
+        "flarum",
+        "file"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tohsakarat",
+            "email": "bestlux@qq.com",
+            "homepage": "https://tohsakarat.work/"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/tohsakrat",
+        "source": "https://github.com/tohsakrat",
+        "forum": "https://github.com/tohsakrat"
+    },
+    "homepage": "https://friendsofflarum.org",
+    "funding": [
+        {
+            "type": "qrCode",
+            "url": "https://gzszd.club/assets/files/2022-05-30/1653871757-105304-img-20220530-084751.jpg"
+        }
+    ],
+    "require": {
+        "flarum/core": "^1.2.0",
+        "fof/drafts": "*"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "tohsakarat/save&load-draft-automatically",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-pen",
+                "backgroundColor": "pink",
+                "color": "#fff"
+            }
+        },
+        "flagrow": {
+            "discuss": "https://github.com/tohsakrat"
+        }
+    }
+}

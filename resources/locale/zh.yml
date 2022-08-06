@@ -1,0 +1,7 @@
+tohsakarat-save-and-load-draft-automatically:
+  forum:
+    buttons:
+      load: 读取本地记录
+    states:
+      ask-for-save: 是否保存在线草稿？
+      ask-for-load: 检测到本地编辑记录，是否恢复？
