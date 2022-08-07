@@ -101,7 +101,6 @@ app.initializers.add('tohsakarat-save-and-load-draft-automatically', () => {
                 window.composerAutoLoad()
               
             }else{
-              未找到草稿
             }
           }}
           icon="fa fa-pen-circle"
