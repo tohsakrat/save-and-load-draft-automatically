@@ -8,7 +8,7 @@ An extension for flarum that allows you to save/load drafts in browser storage a
 
 - save/load drafts in browser storage automatically
 - ask for saving drafts online automatically when exit(require fof/drafts)
-- move cursor to end when minimize the composr (That will help users who have habbits to minimize and quote)
+- move cursor to end when minimize the composer (That will help users who have habbits to minimize and quote)
 
 ## Installation
 
