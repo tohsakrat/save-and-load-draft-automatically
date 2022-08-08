@@ -101,6 +101,7 @@ app.initializers.add('tohsakarat-save-and-load-draft-automatically', () => {
                 window.composerAutoLoad()
               
             }else{
+              未找到草稿
             }
           }}
           icon="fa fa-pen-circle"
@@ -180,7 +181,7 @@ app.initializers.add('tohsakarat-save-and-load-draft-automatically', () => {
 			if (!this.onExit) return;
 
 			if (this.onExit.callback()) {
-			
+			if(app.composer.saveDraft){
 			if(!this.draftSaved){
 			   
 			let mymessage=confirm( app.translator.trans( `tohsakarat-save-and-load-draft-automatically.forum.states.ask-for-save`));
@@ -198,6 +199,27 @@ app.initializers.add('tohsakarat-save-and-load-draft-automatically', () => {
 			   // console.log('prevent1')
 			    return true;
 			}
+			
+			}else{
+			let mymessage1=confirm(this.onExit.message);
+			
+    			if(mymessage1==true){
+    			    //console.log('Nprevent')
+    			   // this.draftSaved = undefined;
+    			    return false;
+    			    
+    			}else{
+    			   // console.log('prevent1')
+    			    return true;
+    			}
+    			    
+			    
+			}
+			
+			
+			
+			
+			
 			    //console.log('prevent2')
 			return true;
 			    
