@@ -131,7 +131,7 @@ app.initializers.add('tohsakarat-save-and-load-draft-automatically', () => {
           }
       
           //console.log(' loadComposer')
-        
+        this.draftSaved=false;
           setTimeout( ()=>{
               //console.log('timeOut')
               if(app.composer.data && !app.composer.data().content.length && !!window.localStorage.getItem(storageName)?.length){
@@ -182,12 +182,16 @@ app.initializers.add('tohsakarat-save-and-load-draft-automatically', () => {
 			if (!this.onExit) return;
 
 			if (this.onExit.callback()) {
-			if(app.composer.saveDraft){
+			    
 			if(!this.draftSaved){
 			   
 			let mymessage=confirm( app.translator.trans( `tohsakarat-save-and-load-draft-automatically.forum.states.ask-for-save`));
-            if(mymessage==true) {  app.composer.saveDraft();this.draftSaved = true; return true}
+            if(mymessage==true) {
+                app.composer.saveDraft();
+                this.draftSaved = true;
+                return true}
 			}
+			
 			
 			let mymessage1=confirm(this.onExit.message);
 			
@@ -200,27 +204,6 @@ app.initializers.add('tohsakarat-save-and-load-draft-automatically', () => {
 			   // console.log('prevent1')
 			    return true;
 			}
-			
-			}else{
-			let mymessage1=confirm(this.onExit.message);
-			
-    			if(mymessage1==true){
-    			    //console.log('Nprevent')
-    			   // this.draftSaved = undefined;
-    			    return false;
-    			    
-    			}else{
-    			   // console.log('prevent1')
-    			    return true;
-    			}
-    			    
-			    
-			}
-			
-			
-			
-			
-			
 			    //console.log('prevent2')
 			return true;
 			    
