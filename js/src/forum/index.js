@@ -13,13 +13,10 @@ import IndexPage from 'flarum/forum/components/IndexPage';
 
 
 app.initializers.add('tohsakarat-save-and-load-draft-automatically', () => {
-
-
-    extend(TextEditor.prototype, 'controlItems', function (items) {
-	
+//console.log('app.initializers.add')
+//console.log(extend)
+//console.log(override)
       app.composer.findEnd=()=>{
-	  
-	  
 			if(!app.composer?.editor || !!app.composer?.data()?.content.length>5 ||  !app.composer.editor?.moveCursorTo ||  !app.composer.editor?.insertAtCursor  || !app.composer.editor?.getSelectionRange)return;
 	          let i = app.composer.editor.getSelectionRange()[1]
 			  
@@ -41,8 +38,6 @@ app.initializers.add('tohsakarat-save-and-load-draft-automatically', () => {
 				  break
                 }
                }
-			
-
       }  
 
       window.composerAutosave=()=>{
@@ -86,6 +81,13 @@ app.initializers.add('tohsakarat-save-and-load-draft-automatically', () => {
         }
       }
 
+
+
+
+    extend(TextEditor.prototype, 'controlItems', function (items) {
+	
+    //console.log('我在这里controlItems')
+    
       items.add(
         "tohsaka-save-and-load-draft-automatically",
         <TextEditorButton
@@ -112,14 +114,14 @@ app.initializers.add('tohsakarat-save-and-load-draft-automatically', () => {
       );
  
     });
-    //console.log(ComposerState)
+    console.dir(TextEditor)
     //window.Composer=Composer
 
 
 
         extend(ComposerState.prototype, 'show', function () {
         
-
+        //console.log('我在这里ComposerState.prototypeshow')
           let username = app.session.user.data.attributes.username;
           if(app.composer.data && app.composer.data().relationships.discussion){
           let discussionID = app.composer.data().relationships.discussion.data.id;
@@ -160,8 +162,7 @@ app.initializers.add('tohsakarat-save-and-load-draft-automatically', () => {
               return str;
               }*/
 			  
-             
-
+            // console.log('我在这里ComposerState.prototype, minimizeshow')
             if(app.composer.editor && app.composer.editor.insertAtCursor){
 			    app.composer.findEnd();
               app.composer.editor.insertAtCursor('\n');
@@ -176,7 +177,7 @@ app.initializers.add('tohsakarat-save-and-load-draft-automatically', () => {
 
 	  
 	    override(ComposerState.prototype, 'preventExit', function () {
-	   
+	     // console.log('我在这里ComposerState.prototype preventExitshow')
 			if (!this.isVisible()) return;
 			if (!this.onExit) return;
 
